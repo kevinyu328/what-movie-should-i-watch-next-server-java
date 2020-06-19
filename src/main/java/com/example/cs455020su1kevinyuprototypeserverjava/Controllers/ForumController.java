@@ -1,5 +1,6 @@
 package com.example.cs455020su1kevinyuprototypeserverjava.Controllers;
 
+import com.example.cs455020su1kevinyuprototypeserverjava.Models.Comment;
 import com.example.cs455020su1kevinyuprototypeserverjava.Models.Forum;
 import com.example.cs455020su1kevinyuprototypeserverjava.Services.ForumService;
 import java.util.List;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -42,6 +44,17 @@ public class ForumController {
   public void deleteForum(@PathVariable("forumId") Integer forumId) {
     forumService.deleteForum(forumId);
   }
+
+
+  @PutMapping("/api/forums/{forumId}")
+  public Forum updateForum(@PathVariable("forumId") Integer forumId, @RequestBody Comment updatedForum) {
+    return forumService.updateForum(forumId, updatedForum);
+  }
+
+//  @PutMapping("/api/forums/{forumId}")
+//  public Forum updateForumText(@PathVariable("forumId") Integer forumId, @RequestBody Comment updatedForum) {
+//    return forumService.updateForumText(forumId, updatedForum);
+//  }
 
 
 
