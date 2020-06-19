@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,8 +24,13 @@ public class User {
   private String phone;
 
 
-  @ManyToMany(mappedBy = "users")
-  private List<Movie> favorites;
+//  @ManyToMany
+//  @JoinTable(
+//      name="favorites",
+//      joinColumns=@JoinColumn(name="USER_ID", referencedColumnName="ID"),
+//      inverseJoinColumns=@JoinColumn(name="MOVIE_ID", referencedColumnName="ID"))
+  @OneToMany(mappedBy = "user")
+  private List<Movie> favoriteMovies;
 
 
   public Integer getId() {
@@ -64,5 +71,14 @@ public class User {
 
   public void setPhone(String phone) {
     this.phone = phone;
+  }
+
+  public List<Movie> getFavoriteMovies() {
+    return favoriteMovies;
+  }
+
+  public void setFavoriteMovies(
+      List<Movie> favoriteMovies) {
+    this.favoriteMovies = favoriteMovies;
   }
 }

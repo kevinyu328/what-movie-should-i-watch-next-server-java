@@ -1,5 +1,6 @@
 package com.example.cs455020su1kevinyuprototypeserverjava.Repositories;
 
+import com.example.cs455020su1kevinyuprototypeserverjava.Models.Movie;
 import com.example.cs455020su1kevinyuprototypeserverjava.Models.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -19,4 +20,6 @@ public interface UserRepository
   @Query("SELECT user FROM User user WHERE user.username=:u")
   public User findUserByUsername(
       @Param("u") String username);
+
+
 }

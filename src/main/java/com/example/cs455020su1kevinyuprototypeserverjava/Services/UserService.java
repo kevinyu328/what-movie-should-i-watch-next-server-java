@@ -1,5 +1,6 @@
 package com.example.cs455020su1kevinyuprototypeserverjava.Services;
 
+import com.example.cs455020su1kevinyuprototypeserverjava.Models.Movie;
 import com.example.cs455020su1kevinyuprototypeserverjava.Models.User;
 import com.example.cs455020su1kevinyuprototypeserverjava.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,4 +33,5 @@ public class UserService {
     currentUser.setPassword(updatedUser.getPassword());
     return repository.save(currentUser);
   }
+
 }
