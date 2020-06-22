@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "https://cs4550-20su1-proto-server.herokuapp.com/")
+@CrossOrigin(origins = "*")
 public class MovieController {
 
   @Autowired

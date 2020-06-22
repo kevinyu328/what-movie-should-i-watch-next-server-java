@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(
-    origins = "https://cs4550-20su1-proto-server.herokuapp.com/",
+    origins = "https://cs4550-20su1-kevinyu-prototype.herokuapp.com/",
     allowCredentials = "true")
 public class UserController {
   @Autowired
